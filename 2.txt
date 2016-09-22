@@ -1,0 +1,16 @@
+一、strus2中开发Action几种方式？
+    (1)创建一个类继承至ActionSupport(校验需继承此类)
+       public class Demo extends ActionSupport{}
+    (2)实现Action接口
+	public interface Action {
+	 //一些常量
+         String SUCCESS = "success";
+         String NONE = "none";
+         String ERROR = "error";
+         String INPUT = "input";
+         String LOGIN = "login";
+	}
+    (3)不继承任何类，不实现任何接口
+
+
+	
