@@ -1,0 +1,21 @@
+一、Struts开发步骤？
+【1. web项目，引入struts - jar包
+  2. web.xml中，引入struts的核心功能，配置过滤器
+  3. 开发action
+  4. 配置action src/struts.xml】
+二、Struts2执行流程？
+	服务器启动：
+	1. 加载项目web.xml
+	2. 创建Struts核心过滤器对象， 执行filter ?  init()
+		struts-default.xml,    核心功能的初始化
+		struts-plugin.xml,     struts相关插件
+		struts.xml	       用户编写的配置文件
+
+        访问：
+	3. 用户访问Action, 服务器根据访问路径名称，找对应的	   aciton配置, 创建action对象
+	4. 执行默认拦截器栈中定义的18个拦截器
+	5. 执行action的业务处理方法
+
+三、拦截器什么时候执行？ (访问/启动)  先执行action类创建，先执行拦截器？
+	1. 用户访问时候按顺序执行18个拦截器；
+	2. 先执行Action类的创建，再执行拦截器； 最后拦截器执行完，再执行业务方法
